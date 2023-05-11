@@ -11,6 +11,6 @@ export interface Dimension {
 }
 
 export enum Unit {
-  MM = 'mm',
+  MILLIMETERS = 'mm',
   INCHES = 'inches',
 }

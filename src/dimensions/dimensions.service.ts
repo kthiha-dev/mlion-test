@@ -1,13 +1,51 @@
 import { Injectable } from '@nestjs/common';
-import { Dimension } from './dimension.model';
+import { Dimension, Unit } from './dimension.model';
 import { CreateDimensionDto } from './dto/create-dimension.dto';
 
 @Injectable()
 export class DimensionsService {
   private dimensions: Dimension[] = [];
+  constructor() {
+    // Initialize the dimensions array with default values
+    this.dimensions = [
+      {
+        a4Width: 210,
+        a4Height: 297,
+        typeAWidth: 76,
+        typeAHeight: 76,
+        typeBWidth: 38,
+        typeBHeight: 51,
+        unit: Unit.MILLIMETERS,
+      },
+    ];
+  }
 
-  calcuate(): Dimension[] {
-    return this.dimensions;
+  // take default dimensions value if empty
+  calculatePostItNotes(): Dimension[] {
+    return this.dimensions.map((dimension) => {
+      const {
+        a4Width,
+        a4Height,
+        typeAWidth,
+        typeAHeight,
+        typeBWidth,
+        typeBHeight,
+        unit,
+      } = dimension;
+
+      // Calculate max number of Type-A and Type-B post-it notes that can be cut from A4 size paper
+      const maxTypeWidth = Math.floor(a4Width / typeAWidth);
+      const maxTypeAHeight = Math.floor(a4Height / typeAHeight);
+      const maxTypeBWidth = Math.floor(a4Width / typeBWidth);
+      const maxTypeBHeight = Math.floor(a4Height / typeBHeight);
+
+      // output
+      return {
+        ...dimension,
+        numberOfTypeANotes: `${maxTypeWidth * maxTypeAHeight} ${unit}`,
+        numberOfTypeBNotes: `${maxTypeBWidth * maxTypeBHeight} ${unit}`,
+      };
+    });
   }
 
   update(createDimensionDto: CreateDimensionDto): Dimension {
@@ -29,6 +67,7 @@ export class DimensionsService {
       typeBHeight,
       unit,
     };
+    // pushing new dimension
     this.dimensions.push(dimension);
     return dimension;
   }

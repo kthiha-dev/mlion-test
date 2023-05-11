@@ -10,7 +10,7 @@ export class DimensionsController {
 
   @Get()
   calculate(): Dimension[] {
-    return this.dimensionService.calcuate();
+    return this.dimensionService.calculatePostItNotes();
   }
 
   @Post()
