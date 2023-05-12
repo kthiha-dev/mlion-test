@@ -30,7 +30,6 @@ export class DimensionsService {
         typeAHeight,
         typeBWidth,
         typeBHeight,
-        unit,
       } = dimension;
 
       // Calculate max number of Type-A and Type-B post-it notes that can be cut from A4 size paper
@@ -42,8 +41,8 @@ export class DimensionsService {
       // output
       return {
         ...dimension,
-        numberOfTypeANotes: `${maxTypeWidth * maxTypeAHeight} ${unit}`,
-        numberOfTypeBNotes: `${maxTypeBWidth * maxTypeBHeight} ${unit}`,
+        numberOfTypeANotes: `${maxTypeWidth * maxTypeAHeight} pieces`,
+        numberOfTypeBNotes: `${maxTypeBWidth * maxTypeBHeight} pieces`,
       };
     });
   }
