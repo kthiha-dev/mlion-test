@@ -4,17 +4,17 @@ import { DimensionsService } from './dimensions.service';
 import { CreateDimensionDto } from './dto/create-dimension.dto';
 @Controller('dimensions')
 export class DimensionsController {
-  constructor(private readonly dimensionService: DimensionsService) {
-    this.dimensionService = dimensionService;
+  constructor(private readonly dimensionsService: DimensionsService) {
+    this.dimensionsService = dimensionsService;
   }
 
   @Get()
   calculate(): Dimension[] {
-    return this.dimensionService.calculatePostItNotes();
+    return this.dimensionsService.calculatePostItNotes();
   }
 
   @Post()
   updateDimensions(@Body() createDimensionDto: CreateDimensionDto): Dimension {
-    return this.dimensionService.update(createDimensionDto);
+    return this.dimensionsService.update(createDimensionDto);
   }
 }

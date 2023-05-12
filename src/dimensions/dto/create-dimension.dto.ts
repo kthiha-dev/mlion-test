@@ -30,7 +30,7 @@ export class CreateDimensionDto {
   @IsEnum(Unit)
   unit: Unit;
 
-  // optional values for A-Notes and B-Notes
-  numberOfTypeANotes?: string;
-  numberOfTypeBNotes?: string;
+  // optional values for result of A-Notes and B-Notes
+  numberOfTypeANote?: string;
+  numberOfTypeBNote?: string;
 }

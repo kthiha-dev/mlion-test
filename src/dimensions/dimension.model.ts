@@ -5,8 +5,8 @@ export interface Dimension {
   typeAHeight: number;
   typeBWidth: number;
   typeBHeight: number;
-  numberOfTypeANote?: number;
-  numberOfTypeBNote?: number;
+  numberOfTypeANote?: string;
+  numberOfTypeBNote?: string;
   unit: Unit;
 }
 

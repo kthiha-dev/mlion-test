@@ -41,8 +41,8 @@ export class DimensionsService {
       // output
       return {
         ...dimension,
-        numberOfTypeANotes: `${maxTypeWidth * maxTypeAHeight} pieces`,
-        numberOfTypeBNotes: `${maxTypeBWidth * maxTypeBHeight} pieces`,
+        numberOfTypeANote: `${maxTypeWidth * maxTypeAHeight} pieces`,
+        numberOfTypeBNote: `${maxTypeBWidth * maxTypeBHeight} pieces`,
       };
     });
   }

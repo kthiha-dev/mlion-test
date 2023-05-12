@@ -43,6 +43,9 @@ $ yarn run test:e2e
 
 # test coverage
 $ yarn run test:cov
+
+# run all test unit tests && e2e tests
+$ yarn run test:all
 ```
 
 ## Author
