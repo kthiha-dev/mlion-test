@@ -5,9 +5,9 @@ export interface Dimension {
   typeAHeight: number;
   typeBWidth: number;
   typeBHeight: number;
+  unit: Unit;
   numberOfTypeANote?: string;
   numberOfTypeBNote?: string;
-  unit: Unit;
 }
 
 export enum Unit {

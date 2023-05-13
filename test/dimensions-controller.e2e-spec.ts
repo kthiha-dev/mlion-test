@@ -2,12 +2,12 @@ import * as request from 'supertest';
 import { Test } from '@nestjs/testing';
 import { HttpStatus } from '@nestjs/common';
 import { AppModule } from '../src/app.module';
-import { Dimension, Unit } from '../src/dimensions/dimension.model';
-import { CreateDimensionDto } from '../src/dimensions/dto/create-dimension.dto';
+import { Dimension } from '../src/dimensions/dimension.model';
+import { fixtureDimension } from './fixture';
 
 describe('DimensionsController (e2e)', () => {
   let app;
-  let createDimensionDto: CreateDimensionDto;
+  let createDimensionDto;
 
   beforeAll(async () => {
     const moduleFixture = await Test.createTestingModule({
@@ -16,16 +16,7 @@ describe('DimensionsController (e2e)', () => {
 
     app = moduleFixture.createNestApplication();
     await app.init();
-
-    createDimensionDto = {
-      a4Width: 210,
-      a4Height: 297,
-      typeAWidth: 76,
-      typeAHeight: 76,
-      typeBWidth: 38,
-      typeBHeight: 51,
-      unit: Unit.MILLIMETERS,
-    };
+    createDimensionDto = fixtureDimension();
   });
 
   afterAll(async () => {
@@ -34,10 +25,11 @@ describe('DimensionsController (e2e)', () => {
 
   describe('/dimensions (GET)', () => {
     it('should return an array of dimensions with number of notes for ANote and BNote', async () => {
+      // Mock and Assertion
       const response = await request(app.getHttpServer())
         .get('/dimensions')
         .expect(HttpStatus.OK);
-
+      // Assertion
       expect(Array.isArray(response.body)).toBe(true);
       expect(response.body.length).toBeGreaterThan(0);
 
@@ -59,11 +51,13 @@ describe('DimensionsController (e2e)', () => {
 
   describe('/dimensions (POST)', () => {
     it('should create a new dimension and return it', async () => {
+      // Mock and Assertion
       const response = await request(app.getHttpServer())
         .post('/dimensions')
         .send(createDimensionDto)
         .expect(HttpStatus.CREATED);
 
+      // Assertion
       expect(response.body.a4Width).toBe(createDimensionDto.a4Width);
       expect(response.body.a4Height).toBe(createDimensionDto.a4Height);
       expect(response.body.typeAWidth).toBe(createDimensionDto.typeAWidth);
