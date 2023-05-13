@@ -4,7 +4,7 @@
 
 ## Description
 
-This task is design for calculation of the Dimensions of Type A post-it note and Dimensions of Type A post-it note based on giving criteria. It user didn't provide dimensions of paper size, it will take default value that shown in the assignment. Otherwise, you can pass your own dimensions to calcuate it. It can be calculated more than one dimensions of the Type A notes and Type B notes. System allow you to change Unit which is MILLIMETERS or INCHES.
+This task is design for calculation of the Dimensions of Type A post-it notes and Dimensions of Type B post-it notes based on giving criteria. It user don't provide dimensions of paper size, it will take default value that shown in the assignment. Otherwise, you can pass your own dimensions to calcuate it. It can be calculated more than one dimensions of the Type A and Type B notes. System allow you to change Unit which is MILLIMETERS or INCHES.
 
 ## Available endpoints
 
@@ -49,7 +49,7 @@ This task is design for calculation of the Dimensions of Type A post-it note and
 $ yarn install
 ```
 
-## Running the app
+## Running the app locally
 
 ```bash
 # development
@@ -77,6 +77,12 @@ $ yarn run test:cov
 # to run all test
 $ yarn run test:all
 ```
+
+## Run With Docker and production ready image
+
+`docker build -t mlion-test-cloud-run .`
+
+And run `docker run -p3000:3000 mlion-test-cloud-run`
 
 ## Author
 
