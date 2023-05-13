@@ -9,8 +9,8 @@ export class DimensionsService {
     // Initialize the dimensions array with default values
     this.dimensions = [
       {
-        a4Width: 210,
-        a4Height: 297,
+        paperWidth: 210,
+        paperHeight: 297,
         typeAWidth: 76,
         typeAHeight: 76,
         typeBWidth: 38,
@@ -24,8 +24,8 @@ export class DimensionsService {
   calculatePostItNotes(): Dimension[] {
     return this.dimensions.map((dimension) => {
       const {
-        a4Width,
-        a4Height,
+        paperWidth,
+        paperHeight,
         typeAWidth,
         typeAHeight,
         typeBWidth,
@@ -33,10 +33,10 @@ export class DimensionsService {
       } = dimension;
 
       // Calculate max number of Type-A and Type-B post-it notes that can be cut from A4 size paper
-      const maxTypeWidth = Math.floor(a4Width / typeAWidth);
-      const maxTypeAHeight = Math.floor(a4Height / typeAHeight);
-      const maxTypeBWidth = Math.floor(a4Width / typeBWidth);
-      const maxTypeBHeight = Math.floor(a4Height / typeBHeight);
+      const maxTypeWidth = Math.floor(paperWidth / typeAWidth);
+      const maxTypeAHeight = Math.floor(paperHeight / typeAHeight);
+      const maxTypeBWidth = Math.floor(paperWidth / typeBWidth);
+      const maxTypeBHeight = Math.floor(paperHeight / typeBHeight);
 
       // output
       return {
@@ -49,8 +49,8 @@ export class DimensionsService {
 
   update(createDimensionDto: CreateDimensionDto): Dimension {
     const {
-      a4Width,
-      a4Height,
+      paperWidth,
+      paperHeight,
       typeAWidth,
       typeAHeight,
       typeBWidth,
@@ -58,8 +58,8 @@ export class DimensionsService {
       unit,
     } = createDimensionDto;
     const dimension: Dimension = {
-      a4Width,
-      a4Height,
+      paperWidth,
+      paperHeight,
       typeAWidth,
       typeAHeight,
       typeBWidth,

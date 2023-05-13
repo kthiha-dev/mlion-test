@@ -4,11 +4,11 @@ import { Unit } from '../dimension.model';
 export class CreateDimensionDto {
   @IsInt()
   @IsNotEmpty()
-  a4Width: number;
+  paperWidth: number;
 
   @IsInt()
   @IsNotEmpty()
-  a4Height: number;
+  paperHeight: number;
 
   @IsInt()
   @IsNotEmpty()

@@ -35,8 +35,8 @@ describe('DimensionsController (e2e)', () => {
 
       // Make sure that all returned dimensions have the correct format
       response.body.forEach((dimension: Dimension) => {
-        expect(typeof dimension.a4Width).toBe('number');
-        expect(typeof dimension.a4Height).toBe('number');
+        expect(typeof dimension.paperWidth).toBe('number');
+        expect(typeof dimension.paperHeight).toBe('number');
         expect(typeof dimension.typeAWidth).toBe('number');
         expect(typeof dimension.typeAHeight).toBe('number');
         expect(typeof dimension.typeBWidth).toBe('number');
@@ -58,8 +58,8 @@ describe('DimensionsController (e2e)', () => {
         .expect(HttpStatus.CREATED);
 
       // Assertion
-      expect(response.body.a4Width).toBe(createDimensionDto.a4Width);
-      expect(response.body.a4Height).toBe(createDimensionDto.a4Height);
+      expect(response.body.paperWidth).toBe(createDimensionDto.paperWidth);
+      expect(response.body.paperHeight).toBe(createDimensionDto.paperHeight);
       expect(response.body.typeAWidth).toBe(createDimensionDto.typeAWidth);
       expect(response.body.typeAHeight).toBe(createDimensionDto.typeAHeight);
       expect(response.body.typeBWidth).toBe(createDimensionDto.typeBWidth);

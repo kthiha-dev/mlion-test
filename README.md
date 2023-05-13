@@ -18,8 +18,8 @@ This task is design for calculation of the Dimensions of Type A post-it notes an
     - Endpoint: http://localhost:3000/dimensions
     - Body:
     {
-    "a4Width": 41000,
-    "a4Height": 29392,
+    "paperWidth": 41000,
+    "paperHeight": 29392,
     "typeAWidth": 76,
     "typeAHeight": 76,
     "typeBWidth": 38,

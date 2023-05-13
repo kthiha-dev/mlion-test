@@ -3,8 +3,8 @@ import { Dimension, Unit } from '../src/dimensions/dimension.model';
 
 export function fixtureDimension(): CreateDimensionDto {
   return {
-    a4Width: 210,
-    a4Height: 297,
+    paperWidth: 210,
+    paperHeight: 297,
     typeAWidth: 76,
     typeAHeight: 76,
     typeBWidth: 38,
@@ -15,8 +15,8 @@ export function fixtureDimension(): CreateDimensionDto {
 
 export function mockResponse(): Dimension {
   return {
-    a4Width: 210,
-    a4Height: 297,
+    paperWidth: 210,
+    paperHeight: 297,
     typeAWidth: 76,
     typeAHeight: 76,
     typeBWidth: 38,
@@ -28,8 +28,8 @@ export function mockResponse(): Dimension {
 export function mockResponseWithNotes(): Dimension[] {
   return [
     {
-      a4Width: 210,
-      a4Height: 297,
+      paperWidth: 210,
+      paperHeight: 297,
       typeAWidth: 76,
       typeAHeight: 76,
       typeBWidth: 38,

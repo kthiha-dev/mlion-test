@@ -14,7 +14,7 @@ export class DimensionsController {
   }
 
   @Post()
-  updateDimensions(@Body() createDimensionDto: CreateDimensionDto): Dimension {
+  update(@Body() createDimensionDto: CreateDimensionDto): Dimension {
     return this.dimensionsService.update(createDimensionDto);
   }
 }

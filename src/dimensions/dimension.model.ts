@@ -1,6 +1,6 @@
 export interface Dimension {
-  a4Width: number;
-  a4Height: number;
+  paperWidth: number;
+  paperHeight: number;
   typeAWidth: number;
   typeAHeight: number;
   typeBWidth: number;

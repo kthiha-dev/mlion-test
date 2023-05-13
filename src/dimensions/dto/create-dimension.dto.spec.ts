@@ -5,7 +5,7 @@ describe('CreateDimensionDto', () => {
   describe('CreateDimensionDto', () => {
     it('should FAIL on invalid CreateDimensionDto', async () => {
       const dto = new CreateDimensionDto();
-      dto.a4Width = 10;
+      dto.paperWidth = 10;
       const errors = await validate(dto);
       expect(errors.length).not.toBe(0);
     });
