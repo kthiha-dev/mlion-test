@@ -67,7 +67,7 @@ export class DimensionsService {
       unit,
     };
     // pushing new dimension
-    this.dimensions.push(dimension);
+    this.dimensions.push(createDimensionDto);
     return dimension;
   }
 }
