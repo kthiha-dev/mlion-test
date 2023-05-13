@@ -1,6 +1,6 @@
 # Requirements
 
-- Node => v20.0.0
+- Node => v18.0.0
 
 ## Description
 
